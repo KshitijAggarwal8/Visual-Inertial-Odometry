@@ -108,8 +108,8 @@ add_subdirectory(include)
 doxygen_add_docs(docs           # target name
   # List of files or directories
   # ${PROJECT_SOURCE_DIR}/app
-  # ${PROJECT_SOURCE_DIR}/libs
-  ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/libs
+  # ${PROJECT_SOURCE_DIR}/include
   )
 
 # create targets for building code coverage reports

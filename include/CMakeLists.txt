@@ -1,2 +1,4 @@
-add_subdirectory(VisualOdometry)
-add_subdirectory(InertialOdometry)
+
+add_subdirectory (lib1)
+add_subdirectory (lib2)
+

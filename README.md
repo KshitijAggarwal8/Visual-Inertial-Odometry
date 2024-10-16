@@ -21,7 +21,7 @@ cmake --build build
 ## Generate Docs
 1. **Build the target**:
 ```bash
-   cmake --build ./build --target docs
+cmake --build ./build --target docs
 ```
 2. **View the docs**:
 ```bash
