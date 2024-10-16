@@ -9,21 +9,21 @@ A short video providing a brief overview of the project is provided here: ???
 
 ## Build 
 1. **Generate Build Files**:
-   ```bash
-   cmake -S . -B build
-   ```
+```bash
+cmake -S . -B build
+```
 
 2. **Compile the Project**:
-   ```bash
-   cmake --build build
-   ```
+```bash
+cmake --build build
+```
 
 ## Generate Docs
-Build the target
+1. **Build the target**:
 ```bash
-cmake --build ./build --target docs
+   cmake --build ./build --target docs
 ```
-View the docs
+2. **View the docs**:
 ```bash
 open ./docs/html/index.html
 ```
