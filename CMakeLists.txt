@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 3.14)
 project(scratch)
 
+# External Dependencies
+find_package(Eigen3 3.3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+
 #
 # GoogleTest Setup
 # ref: https://google.github.io/googletest/quickstart-cmake.html

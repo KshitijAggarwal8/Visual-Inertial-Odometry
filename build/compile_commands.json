@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/apoorv/Documents/ENPM700/VIO/build/libs/lib1",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/apoorv/Documents/ENPM700/VIO/libs/lib1/. -std=gnu++14 -o CMakeFiles/myLib1.dir/src.cpp.o -c /home/apoorv/Documents/ENPM700/VIO/libs/lib1/src.cpp",
+  "file": "/home/apoorv/Documents/ENPM700/VIO/libs/lib1/src.cpp"
+},
+{
+  "directory": "/home/apoorv/Documents/ENPM700/VIO/build/libs/lib2",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/apoorv/Documents/ENPM700/VIO/libs/lib2/. -std=gnu++14 -o CMakeFiles/myLib2.dir/src.cpp.o -c /home/apoorv/Documents/ENPM700/VIO/libs/lib2/src.cpp",
+  "file": "/home/apoorv/Documents/ENPM700/VIO/libs/lib2/src.cpp"
+},
+{
+  "directory": "/home/apoorv/Documents/ENPM700/VIO/build/app",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/apoorv/Documents/ENPM700/VIO/include -I/home/apoorv/Documents/ENPM700/VIO/libs/lib1/. -I/home/apoorv/Documents/ENPM700/VIO/libs/lib2/. -std=gnu++14 -o CMakeFiles/shell-app.dir/main.cpp.o -c /home/apoorv/Documents/ENPM700/VIO/app/main.cpp",
+  "file": "/home/apoorv/Documents/ENPM700/VIO/app/main.cpp"
+},
+{
+  "directory": "/home/apoorv/Documents/ENPM700/VIO/build/test",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/apoorv/Documents/ENPM700/VIO/include -I/home/apoorv/Documents/ENPM700/VIO/libs/lib1/. -I/home/apoorv/Documents/ENPM700/VIO/libs/lib2/. -isystem /home/apoorv/Documents/ENPM700/VIO/build/_deps/googletest-src/googletest/include -isystem /home/apoorv/Documents/ENPM700/VIO/build/_deps/googletest-src/googletest -std=gnu++14 -o CMakeFiles/cpp-test.dir/main.cpp.o -c /home/apoorv/Documents/ENPM700/VIO/test/main.cpp",
+  "file": "/home/apoorv/Documents/ENPM700/VIO/test/main.cpp"
+},
+{
+  "directory": "/home/apoorv/Documents/ENPM700/VIO/build/test",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/apoorv/Documents/ENPM700/VIO/include -I/home/apoorv/Documents/ENPM700/VIO/libs/lib1/. -I/home/apoorv/Documents/ENPM700/VIO/libs/lib2/. -isystem /home/apoorv/Documents/ENPM700/VIO/build/_deps/googletest-src/googletest/include -isystem /home/apoorv/Documents/ENPM700/VIO/build/_deps/googletest-src/googletest -std=gnu++14 -o CMakeFiles/cpp-test.dir/test.cpp.o -c /home/apoorv/Documents/ENPM700/VIO/test/test.cpp",
+  "file": "/home/apoorv/Documents/ENPM700/VIO/test/test.cpp"
+}
+]

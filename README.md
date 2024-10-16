@@ -7,6 +7,18 @@ All documents pertaining to the project can be found under `/docs`. </br>
 Initial Product Backlog link: https://tinyurl.com/bdfh7sdd </br>
 A short video providing a brief overview of the project is provided here: ???
 
+## Build 
+1. **Generate Build Files**:
+   ```bash
+   cmake -S . -B build
+   ```
+
+2. **Compile the Project**:
+   ```bash
+   cmake --build build
+   ```
+
+
 
 ## References
 - https://github.com/HKUST-Aerial-Robotics/VINS-Mono
