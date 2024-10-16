@@ -1,0 +1,2 @@
+add_subdirectory(VisualOdometry)
+add_subdirectory(InertialOdometry)
