@@ -1,0 +1,17 @@
+digraph "googletest-output-test.RemoveTime"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="googletest-output-test.RemoveTime",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="googletest-output-test.Normalize\lOutput",height=0.2,width=0.4,color="black",URL="$namespacegoogletest-output-test.html#a34d8f4f0f5714a846af7a576fca906ea",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="googletest-output-test.Get\lCommandOutput",height=0.2,width=0.4,color="black",URL="$namespacegoogletest-output-test.html#ab1776de1dd70435fb1af39390bd7d4f3",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="googletest-output-test.Get\lOutputOfAllCommands",height=0.2,width=0.4,color="black",URL="$namespacegoogletest-output-test.html#a3f97b075a05d215e5f7d1c2b71973f78",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="googletest-output-test.GTest\lOutputTest.testOutput",height=0.2,width=0.4,color="black",URL="$classgoogletest-output-test_1_1GTestOutputTest.html#a4ab77925377e6c837d33f07960a31212",tooltip=" "];
+}

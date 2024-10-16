@@ -18,6 +18,15 @@ A short video providing a brief overview of the project is provided here: ???
    cmake --build build
    ```
 
+## Generate Docs
+Build the target
+```bash
+cmake --build ./build --target docs
+```
+View the docs
+```bash
+open ./docs/html/index.html
+```
 
 
 ## References

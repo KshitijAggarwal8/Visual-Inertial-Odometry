@@ -1,0 +1,29 @@
+digraph "testing::internal::TypeParameterizedTestSuiteRegistry"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{testing::internal::\lTypeParameterizedTestSuite\lRegistry\n||+ RegisterTestSuite()\l+ RegisterInstantiation()\l+ CheckForInstantiations()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -suites_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{std::map\< std::string,\l testing::internal::TypeParameterized\lTestSuiteRegistry::TypeParameterizedTest\lSuiteInfo \>\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +elements" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{testing::internal::\lTypeParameterizedTestSuite\lRegistry::TypeParameterizedTest\lSuiteInfo\n||+ TypeParameterizedTestSuite\lInfo()\l}",height=0.2,width=0.4,color="black",URL="$structtesting_1_1internal_1_1TypeParameterizedTestSuiteRegistry_1_1TypeParameterizedTestSuiteInfo.html",tooltip=" "];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" +code_location" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{testing::internal::\lCodeLocation\n||+ CodeLocation()\l}",height=0.2,width=0.4,color="black",URL="$structtesting_1_1internal_1_1CodeLocation.html",tooltip=" "];
+  Node5 -> Node4 [color="grey25",fontsize="10",style="solid",label=" +line" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{int\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node6 -> Node4 [color="grey25",fontsize="10",style="solid",label=" +file" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{std::string\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node7 [label="{std::basic_string\<\l Char \>\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node8 -> Node3 [color="grey25",fontsize="10",style="solid",label=" +instantiated" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{bool\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node6 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +keys" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 -> Node2 [dir="back",color="orange",fontsize="10",style="solid",label=" \< std::string, testing\l::internal::TypeParameterized\lTestSuiteRegistry::TypeParameterized\lTestSuiteInfo \>" ,fontname="Helvetica"];
+  Node9 [label="{std::map\< K, T \>\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node10 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +keys" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node10 [label="{K\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node11 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +elements" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node11 [label="{T\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+}

@@ -1,0 +1,9 @@
+digraph "app" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_d422163b96683743ed3963d4aac17747 [shape=box, label="app", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d422163b96683743ed3963d4aac17747.html"];
+  dir_6719ab1f1f7655efc2fa43f7eb574fd1 [shape=box label="libs" color="red" URL="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html"];
+  dir_d422163b96683743ed3963d4aac17747->dir_6719ab1f1f7655efc2fa43f7eb574fd1 [headlabel="2", labeldistance=1.5 headhref="dir_000000_000027.html"];
+}

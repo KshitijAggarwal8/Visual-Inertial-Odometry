@@ -1,0 +1,11 @@
+digraph "QueueNode::element"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="QueueNode::element",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Queue::Dequeue",height=0.2,width=0.4,color="black",URL="$classQueue.html#a434d465001c3078e999f7a89a8af84c0",tooltip=" "];
+}

@@ -1,0 +1,18 @@
+digraph "build/_deps/googletest-src/googlemock/include/gmock" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_deb2d1c1f5c54b35245335ac08173a14 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="include" fontname="Helvetica", fontsize="10", URL="dir_deb2d1c1f5c54b35245335ac08173a14.html"]
+  subgraph clusterdir_4c533608b2ceb2bf200559e4bd31da5a {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_4c533608b2ceb2bf200559e4bd31da5a.html"];
+    dir_4c533608b2ceb2bf200559e4bd31da5a [shape=plaintext label="gmock"];
+  dir_5cc1b33f88496a834cd06d05f2b023dd [shape=box label="internal" fillcolor="white" style="filled" color="red" URL="dir_5cc1b33f88496a834cd06d05f2b023dd.html"];
+  }
+  }
+  dir_001a0f336d1d0a6c17b1be78e41a6b36 [shape=box label="googletest" color="red" URL="dir_001a0f336d1d0a6c17b1be78e41a6b36.html"];
+  dir_5cc1b33f88496a834cd06d05f2b023dd->dir_001a0f336d1d0a6c17b1be78e41a6b36 [headlabel="2", labeldistance=1.5 headhref="dir_000011_000013.html"];
+  dir_4c533608b2ceb2bf200559e4bd31da5a->dir_001a0f336d1d0a6c17b1be78e41a6b36 [headlabel="5", labeldistance=1.5 headhref="dir_000010_000013.html"];
+  dir_4c533608b2ceb2bf200559e4bd31da5a->dir_5cc1b33f88496a834cd06d05f2b023dd [headlabel="18", labeldistance=1.5 headhref="dir_000010_000011.html"];
+}

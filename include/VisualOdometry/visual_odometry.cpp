@@ -1,7 +1,7 @@
 /**
  * @file visual_odometry.cpp
  * @author Apoorv Thapliyal
- * @brief 
+ * @brief C++ source file for Visual Odometry class
  * @version 0.1
  * @date 2024-10-16
  * 

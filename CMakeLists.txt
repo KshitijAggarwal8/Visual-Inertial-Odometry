@@ -102,12 +102,13 @@ endif()
 add_subdirectory(libs)
 add_subdirectory(app)
 add_subdirectory(test)
+add_subdirectory(include)
 
 # create a target to build documentation
 doxygen_add_docs(docs           # target name
   # List of files or directories
-  ${PROJECT_SOURCE_DIR}/app
-  ${PROJECT_SOURCE_DIR}/libs
+  # ${PROJECT_SOURCE_DIR}/app
+  # ${PROJECT_SOURCE_DIR}/libs
   ${PROJECT_SOURCE_DIR}/include
   )
 
