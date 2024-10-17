@@ -9,7 +9,7 @@
  * 
  */
 
-#pragma once
+#pragma oncea
 
 #include <iostream>
 #include <eigen3/Eigen/Dense>
