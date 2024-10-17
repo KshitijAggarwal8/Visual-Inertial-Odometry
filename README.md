@@ -5,7 +5,8 @@ Visual Inertial Odometry (VIO) estimates a device's position and orientation by 
 Phase 0 involves the proposal for the project, along with information about the methodology that would be used for software development in the project. </br>
 All documents pertaining to the project can be found under `/doc`. </br>
 Initial Product Backlog link: https://tinyurl.com/bdfh7sdd </br>
-A short video providing a brief overview of the project is provided here: ???
+A short video providing a brief overview of the project is provided here: https://www.youtube.com/watch?v=4DxbtCh8VpY
+
 
 ## Build 
 1. **Generate Build Files**:
