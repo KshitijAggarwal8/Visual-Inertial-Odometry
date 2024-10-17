@@ -100,8 +100,8 @@ endif()
 # ref: https://cmake.org/cmake/help/latest/guide/tutorial/index.html
 #
 add_subdirectory(libs)
-add_subdirectory(app)
-add_subdirectory(test)
+# add_subdirectory(app)
+# add_subdirectory(test)
 # add_subdirectory(include)
 
 # create a target to build documentation

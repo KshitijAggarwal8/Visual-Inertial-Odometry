@@ -9,19 +9,16 @@
  * 
  */
 
-#ifndef INERTIAL_ODOMETRY_HPP
-#define INERTIAL_ODOMETRY_HPP
-
 #pragma once
 
 #include <iostream>
 #include <eigen3/Eigen/Dense>
 #include <opencv2/opencv.hpp>
-#include <Eigen/Core> 
+#include <eigen3/Eigen/Core> 
 #include <vector>
 
 
-namespace vo {
+namespace io{
 
 /**
  * @brief Inertial Odometry class
@@ -107,5 +104,4 @@ public:
     void update_pose();
 };
 
-#endif // INERTIAL_ODOMETRY_HPP
 }
