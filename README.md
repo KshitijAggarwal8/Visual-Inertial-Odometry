@@ -29,7 +29,7 @@ open ./docs/html/index.html
 ```
 ## Collaborators
 Apoorv Thapliyal - 190907268 </br>
-Kshitij Aggarwal - ???
+Kshitij Aggarwal - 119211618
 
 ## References
 - https://github.com/HKUST-Aerial-Robotics/VINS-Mono

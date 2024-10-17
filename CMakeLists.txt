@@ -102,7 +102,7 @@ endif()
 add_subdirectory(libs)
 add_subdirectory(app)
 add_subdirectory(test)
-add_subdirectory(include)
+# add_subdirectory(include)
 
 # create a target to build documentation
 doxygen_add_docs(docs           # target name
