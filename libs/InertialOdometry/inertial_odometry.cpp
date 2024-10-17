@@ -14,26 +14,26 @@
 #include <eigen3/Eigen/src/Core/Matrix.h>
 #include <vector>
 
-Eigen::MatrixXf InertialOdometry::preintegrate_IMU_data(const std::vector<Eigen::Vector3f>& imu_data, 
+Eigen::MatrixXf vo::InertialOdometry::preintegrate_IMU_data(const std::vector<Eigen::Vector3f>& imu_data, 
                                                         const Eigen::Vector3f& bias) {
     // Implementation for IMU preintegration from on accelerometer and gyroscope data
     Eigen::MatrixXf preintegrated_data;
     return preintegrated_data;
 }
 
-Eigen::Vector3f InertialOdometry::correct_bias(const Eigen::Vector3f& bias) {
+Eigen::Vector3f vo::InertialOdometry::correct_bias(const Eigen::Vector3f& bias) {
     // Implementation of the bias correction logic
     Eigen::Vector3f corrected_bias = bias; // Placeholder
     return corrected_bias;
 }
 
-Eigen::Matrix4f InertialOdometry::estimate_motion(const Eigen::MatrixXf& preintegrated_data) {
+Eigen::Matrix4f vo::InertialOdometry::estimate_motion(const Eigen::MatrixXf& preintegrated_data) {
     // Implementation of the motion estimation from on preintegrated IMU data
     Eigen::Matrix4f motion = Eigen::Matrix4f::Identity();
     return motion;
 }
 
-void InertialOdometry::update_pose() {
+void vo::InertialOdometry::update_pose() {
     // Updateing the current pose (io_pose) based on the estimated motion
 }
 
