@@ -1,6 +1,6 @@
 .cache
 build/
 compile_commands.json
-cmake*/
+# cmake*/
 include/
 docs/
