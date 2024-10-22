@@ -49,7 +49,7 @@ jobs:
       # Build, run unit test, and generate coverage report
       - name: Configure CMake flags and build exectables
         run: |
-          cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -S ./ -B build/
+          cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -D OpenCV_DIR=/usr/share/opencv4 -S ./ -B build/
           cmake --build build/ --clean-first --target all test_coverage
           cat build/test_coverage.info
 
