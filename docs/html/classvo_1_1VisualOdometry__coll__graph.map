@@ -1,0 +1,12 @@
+<map id="vo::VisualOdometry" name="vo::VisualOdometry">
+<area shape="rect" id="node1" title="Visual Odometry class." alt="" coords="350,440,505,591"/>
+<area shape="rect" id="node2" title=" " alt="" coords="9,285,185,363"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,145,73,223"/>
+<area shape="rect" id="node4" title=" " alt="" coords="152,145,268,223"/>
+<area shape="rect" id="node8" title=" " alt="" coords="209,285,392,363"/>
+<area shape="rect" id="node5" title=" " alt="" coords="191,5,229,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="416,285,460,363"/>
+<area shape="rect" id="node7" title=" " alt="" coords="494,285,563,363"/>
+<area shape="rect" id="node9" title=" " alt="" coords="361,145,435,223"/>
+<area shape="rect" id="node10" title=" " alt="" coords="587,285,657,363"/>
+</map>
