@@ -8,26 +8,72 @@ Initial Product Backlog link: https://tinyurl.com/bdfh7sdd </br>
 A short video providing a brief overview of the project is provided here: https://www.youtube.com/watch?v=4DxbtCh8VpY
 
 
-## Build 
-1. **Generate Build Files**:
+## Build Instructions
+
+### 1. Generate Build Files:
+Run the following command to configure the project and generate build files:
 ```bash
 cmake -S . -B build
 ```
 
-2. **Compile the Project**:
+### 2. Compile the Project:
+After generating the build files, compile the project from scratch:
 ```bash
-cmake --build build
+cmake --build build --clean-first
+```
+To clean the build directory:
+```bash
+cmake --build build/ --target clean
 ```
 
-## Generate Docs
-1. **Build the target**:
+## Documentation Generation
+
+### 1. Build the Documentation:
+To generate project documentation, use the following command:
 ```bash
-cmake --build ./build --target docs
+cmake --build build --target docs
 ```
-2. **View the docs**:
+
+### 2. View the Documentation:
+Once the documentation is generated, open it in a browser:
 ```bash
 open ./docs/html/index.html
 ```
+
+## Unit Testing
+
+### Running Unit Tests:
+To run unit tests manually, execute:
+```bash
+ctest --test-dir build/
+```
+
+## Test Coverage
+
+### 1. Configure for Coverage:
+To generate test coverage reports, set the build type to `Debug` and enable coverage with `WANT_COVERAGE=ON`:
+```bash
+cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -S ./ -B build/
+```
+
+### 2. Clean Compile and Generate Coverage Report:
+Perform a clean compile, run unit tests, and generate the coverage report:
+```bash
+cmake --build build/ --clean-first --target all test_coverage
+```
+
+### 3. View the Coverage Report:
+After generating the coverage report, open it in a web browser:
+```bash
+open build/test_coverage/index.html
+```
+
+## Running the Program Executables
+To run the executables of the project, the following command must be executed:
+```bash
+./build/app/app
+```
+
 ## Collaborators
 Apoorv Thapliyal - 190907268 </br>
 Kshitij Aggarwal - 119211618
