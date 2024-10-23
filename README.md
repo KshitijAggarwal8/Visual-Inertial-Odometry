@@ -1,6 +1,6 @@
 ![CICD Workflow status](https://github.com/KshitijAggarwal8/Visual-Inertial-Odometry/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg)
 
-[![codecov](https://codecov.io/gh/KshitijAggarwal8/Visual-Inertial-Odometry/branch/main/graph/badge.svg)](https://codecov.io/gh/TommyChangUMD/cpp-boilerplate-v2)
+[![codecov](https://codecov.io/gh/KshitijAggarwal8/Visual-Inertial-Odometry/branch/main/graph/badge.svg)](https://codecov.io/gh/KshitijAggarwal8/Visual-Inertial-Odometry)
 
 # Visual Inertial Odometry
 Visual Inertial Odometry (VIO) estimates a device's position and orientation by fusing data from a camera and an Inertial Measurement Unit (IMU). The IMU provides acceleration and angular velocity, while the camera captures visual features for movement tracking. This combination enhances motion tracking accuracy, addressing sensor limitations like IMU drift and visual ambiguity in low light. We fuse the processed measurements using the **Levenberg-Marquardt optimization algorithm**, minimizing residuals between VO-derived and IMU-integrated positions. This approach corrects IMU drift with reliable visual information and mitigates visual errors from lighting or motion blur, resulting in robust position and orientation estimates in challenging conditions.
