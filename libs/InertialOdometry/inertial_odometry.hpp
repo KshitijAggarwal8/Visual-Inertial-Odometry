@@ -18,6 +18,10 @@
 #include <vector>
 
 
+/**
+ * @brief Inertial Odometry namespace
+ * 
+ */
 namespace io{
 
 /**
@@ -28,42 +32,36 @@ class InertialOdometry {
 
 private:
     /**
-     * @brief Accelerometer data
-     * 
+     * @brief Vector to store accelerometer data [ax, ay, az]
+     *  
      */
-    std::vector<Eigen::Vector3f> accelerometer_data;
+    Eigen::Vector3d accelerometer_data;
 
     /**
-     * @brief Gyroscope data
+     * @brief Vector to store gyroscope data [wx, wy, wz]
      * 
      */
-    std::vector<Eigen::Vector3f> gyroscope_data;
+    Eigen::Vector3d gyroscope_data;
 
     /**
-     * @brief IMU bias
+     * @brief Transformation matrix of the current pose
      * 
      */
-    Eigen::Vector3f bias;
+    Eigen::Matrix4d io_pose;
 
     /**
-     * @brief State vector
+     * @brief Sampling time for the IMU data
      * 
      */
-    Eigen::VectorXf state_vector;
+    float dt = 0.001;
 
 public:
     /**
-     * @brief Inertial Odometry final pose
-     * 
-     */
-    Eigen::Matrix4f io_pose;
-
-    /**
      * @brief Construct a new Inertial Odometry object
      * 
-     * @param bias Initial bias for the IMU data
+     * @param initial_pose 
      */
-    InertialOdometry(const Eigen::Vector3f& bias);
+    InertialOdometry(Eigen::Matrix4d initial_pose);
 
     /**
      * @brief Destroy the Inertial Odometry object
@@ -72,36 +70,27 @@ public:
     ~InertialOdometry();
 
     /**
-     * @brief Preintegrate IMU data for motion estimation
+     * @brief Function to integrate the IMU data
      * 
-     * @param imu_data The IMU data (acceleration and gyro)
-     * @param bias The bias to be applied to the IMU data
-     * @return Eigen::MatrixXf Preintegrated data
+     * @param a: accelerometer data in the imu frame
+     * @param w: gyroscope data in the imu frame
      */
-    Eigen::MatrixXf preintegrate_IMU_data(const std::vector<Eigen::Vector3f>& imu_data, 
-                                          const Eigen::Vector3f& bias);
+    void update_pose(Eigen::Vector3d a, Eigen::Vector3d w);
 
     /**
-     * @brief Correct the IMU bias
+     * @brief Function to calculate the rate of change of rotation matrix using rodrigues formula
      * 
-     * @param bias The current IMU bias
-     * @return Eigen::Vector3f Corrected bias
+     * @param w: angular velocity vector
+     * @return Eigen::Matrix3d: rate of change of rotation matrix
      */
-    Eigen::Vector3f correct_bias(const Eigen::Vector3f& bias);
+    Eigen::Matrix3d rodrigues_formula(Eigen::Vector3d w);
 
     /**
-     * @brief Estimate motion based on preintegrated IMU data
+     * @brief Get the pose 
      * 
-     * @param preintegrated_data The preintegrated IMU data
-     * @return Eigen::Matrix4f Estimated motion
+     * @param pose 
      */
-    Eigen::Matrix4f estimate_motion(const Eigen::MatrixXf& preintegrated_data);
-
-    /**
-     * @brief Update the current pose of the system
-     * 
-     */
-    void update_pose();
+    Eigen::Matrix4d get_pose();
 };
 
 }

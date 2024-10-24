@@ -1,2 +1,3 @@
-add_subdirectory(VisualOdometry)
+add_subdirectory(DataLoader)
 add_subdirectory(InertialOdometry)
+add_subdirectory(VisualOdometry)

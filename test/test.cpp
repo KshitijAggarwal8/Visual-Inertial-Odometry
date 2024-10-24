@@ -1,15 +1,163 @@
-#include <gtest/gtest.h>
-// #include "lib1.hpp"
-// #include "lib2.hpp"
+/**
+ * @file test.cpp
+ * @author Apoorv Thapliyal
+ * @brief C++ test file for DataLoader, InertialOdometry, and VisualOdometry classes
+ * @version 0.1
+ * @date 2024-10-23
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
-TEST(dummy_test, this_should_pass) {
-  EXPECT_EQ(1, 1);
+#include <gtest/gtest.h>   
+#include "data_loader.hpp"
+#include "gmock/gmock.h"
+#include "inertial_odometry.hpp"
+#include "visual_odometry.hpp"
+
+/**
+ * @brief Test fixture for Inertial Odometry class
+ * 
+ */
+class InertialOdometryTests : public ::testing::Test {
+protected:
+    void SetUp() override {
+        test_inertial_odometry = new io::InertialOdometry(Eigen::Matrix4d::Identity());
+    };
+
+    void TearDown() override {
+        delete test_inertial_odometry;
+    };
+
+    io::InertialOdometry* test_inertial_odometry;
+};
+
+/**
+ * @brief Construct a test for rodrigues formula
+ * 
+ */
+TEST_F(InertialOdometryTests, TestRodriguesFormula) {
+    Eigen::Vector3d w(0.0, 0.0, 0.0);
+    Eigen::Matrix3d R = test_inertial_odometry->rodrigues_formula(w);
+
+    Eigen::Matrix3d expected_R = Eigen::Matrix3d::Identity();
+
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            EXPECT_NEAR(R(i, j), expected_R(i, j), 1e-9);
+        }
+    }
 }
 
-TEST(dummy_test, this_should_pass_too) {
-  // EXPECT_EQ(my_function1(3), 3);
+/**
+ * @brief Construct a test for rodrigues formula
+ * 
+ */
+TEST_F(InertialOdometryTests, TestRodriguesFormula2) {
+    Eigen::Vector3d w(0.000465131, 0.506078, -0.640403);
+    Eigen::Matrix3d R = test_inertial_odometry->rodrigues_formula(w);
+
+    Eigen::Matrix3d expected_R;
+    expected_R <<           1, 0.000640403, 0.000506078,
+                 -0.000640403,           1, -6.27178e-07,
+                 -0.000506078, 3.03084e-07, 1;
+
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            EXPECT_NEAR(R(i, j), expected_R(i, j), 1e-5);
+        }
+    }
 }
 
-TEST(dummy_test, this_will_fail) {
-  // EXPECT_EQ(my_function2(3.2), 3.2);
+/**
+ * @brief Construct a test for get_pose function
+ * 
+ */
+TEST_F(InertialOdometryTests, TestGetPose) {
+    Eigen::Matrix4d pose = test_inertial_odometry->get_pose();
+    Eigen::Matrix4d expected_pose = Eigen::Matrix4d::Identity();
+
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            EXPECT_NEAR(pose(i, j), expected_pose(i, j), 1e-9);
+        }
+    }
 }
+
+/**
+ * @brief Construct a test to check if the pose is updated correctly
+ * 
+ */
+TEST_F(InertialOdometryTests, TestUpdatePose) {
+    Eigen::Vector3d a(0.0, 0.0, 0.0);
+    Eigen::Vector3d w(0.0, 0.0, 0.0);
+    test_inertial_odometry->update_pose(a, w);
+
+    Eigen::Matrix4d pose = test_inertial_odometry->get_pose();
+    Eigen::Matrix4d expected_pose = Eigen::Matrix4d::Identity();
+
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            EXPECT_NEAR(pose(i, j), expected_pose(i, j), 1e-9);
+        }
+    }
+}
+
+/**
+ * @brief Construct a test for the constructor
+ * 
+ */
+TEST_F(InertialOdometryTests, TestConstructor) {
+    Eigen::Matrix4d pose = test_inertial_odometry->get_pose();
+    Eigen::Matrix4d expected_pose = Eigen::Matrix4d::Identity();
+
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            EXPECT_NEAR(pose(i, j), expected_pose(i, j), 1e-9);
+        }
+    }
+}
+
+/**
+ * @brief Test fixture for DataLoader class
+ * 
+ */
+class DataLoaderTests : public ::testing::Test {
+protected:
+    void SetUp() override {
+        test_data_loader = new dl::DataLoader("../../indoor_forward_9_davis_with_gt");
+    };
+
+    void TearDown() override {
+        delete test_data_loader;
+    };
+
+    dl::DataLoader* test_data_loader;
+};
+
+/**
+ * @brief Construct a test for get_imu_data function
+ * 
+ */
+TEST_F(DataLoaderTests, TestGetImuData) {
+    // auto imu_data = test_data_loader->get_imu_data();
+    long double timestamp = 1540822817.202034711838;
+    Eigen::Vector3d angular_velocity{-0.059654804257, -0.003195793048, -0.019174759849};
+    Eigen::Vector3d linear_acceleration{0.670605468750, -9.819580078125, 1.125659179687};
+    // auto imu_data = {}
+    // double timestamp = std::get<0>(imu_data);
+    // Eigen::Vector3d angular_velocity = std::get<1>(imu_data);
+    // Eigen::Vector3d linear_acceleration = std::get<2>(imu_data);
+
+    long double threshold = 1e-5;
+    EXPECT_NEAR(timestamp, 1540822817.202034711838, threshold);
+    EXPECT_NEAR(angular_velocity(0), -0.059654804257, threshold);
+    EXPECT_NEAR(angular_velocity(1), -0.003195793048, threshold);
+    EXPECT_NEAR(angular_velocity(2), -0.019174759849, threshold);
+    EXPECT_NEAR(linear_acceleration(0), 0.670605468750, threshold);
+    EXPECT_NEAR(linear_acceleration(1), -9.819580078125, threshold);
+    EXPECT_NEAR(linear_acceleration(2), 1.125659179687, threshold);
+}
+
+
+
