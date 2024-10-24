@@ -7,6 +7,8 @@ All documents pertaining to the project can be found under `/doc`. </br>
 Initial Product Backlog link: https://tinyurl.com/bdfh7sdd </br>
 A short video providing a brief overview of the project is provided here: https://www.youtube.com/watch?v=4DxbtCh8VpY
 
+## Phase 1
+Phase 1 involves design and implementation 
 
 ## Build Instructions
 
@@ -74,6 +76,32 @@ To run the executables of the project, the following command must be executed:
 ./build/app/app
 ```
 
+The ouput of the above command would be similar to:
+```bash
+x_gt: 0.000000
+y_gt: 0.000000
+z_gt: 0.000000
+qx_gt: -0.000014
+qy_gt: -0.000024
+qz_gt: -0.000009
+qw_gt: 1.000000
+
+x_gt: 0.000000
+y_gt: 0.000000
+z_gt: 0.000000
+qx_gt: -0.000051
+qy_gt: -0.000040
+qz_gt: -0.000015
+qw_gt: 1.000000
+
+...
+```
+
+To write this to a text file for better processing, run the executable in this manner:
+```bash
+./build/app/app > output.txt
+```
+
 ## Collaborators
 Apoorv Thapliyal - 190907268 </br>
 Kshitij Aggarwal - 119211618
@@ -84,3 +112,11 @@ Kshitij Aggarwal - 119211618
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8421746
 - https://rpg.ifi.uzh.ch/docs/VO_Part_I_Scaramuzza.pdf
 
+## Warnings
+### Euler Angles Conversion Warning
+
+In the current implementation, you may encounter the following warning from `clangd` during Euler angles conversion in `app/main.cpp`: 
+```bash
+'eulerAngles' is deprecatedclang(-Wdeprecated-declarations)
+```
+This warning can be safely ignored for the purpose of this project. Future versions will include an updated implementation for Euler angle conversions.

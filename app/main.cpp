@@ -31,8 +31,7 @@ int main()
     int counter = 0;
 
     // Display IMU data
-    while (counter < data_loader.qx_gt.size())
-    // while(counter != 70000)
+    while (true)
     { 
         // Get IMU data
         auto imu_data = data_loader.get_imu_data();
@@ -68,26 +67,25 @@ int main()
         // std::cout << "\n";
 
         // Convert to quaternion
-        // Eigen::Quaterniond q(rotation);
+        Eigen::Quaterniond q(io_rotation_matrix);
 
         // Convert to Euler angles 'xyz' between -pi to pi
         Eigen::Vector3d io_euler_angles = io_rotation_matrix.eulerAngles(0, 1, 2);
         // Convert to degrees
         io_euler_angles = io_euler_angles * 180 / M_PI;
 
-        std::cout << "roll: " << io_euler_angles(0) << std::endl;
-        std::cout << "pitch: " << io_euler_angles(1) << std::endl;
-        std::cout << "yaw: " << io_euler_angles(2) << std::endl;
+        // std::cout << "roll: " << io_euler_angles(0) << std::endl;
+        // std::cout << "pitch: " << io_euler_angles(1) << std::endl;
+        // std::cout << "yaw: " << io_euler_angles(2) << std::endl;
 
         // Display IMU data
-        // std::cout << "x_gt: " << pose(0,3) << std::endl;
-        // std::cout << "y_gt: " << pose(1,3) << std::endl;
-        // std::cout << "z_gt: " << pose(2,3) << std::endl;
-        // std::cout << "qx_gt: " << q.x() << std::endl;
-        // std::cout << "qy_gt: " << q.y() << std::endl;
-        // std::cout << "qz_gt: " << q.z() << std::endl;
-        // std::cout << "qw_gt: " << q.w() << std::endl;
-        
+        std::cout << "x_gt: " << io_pose(0,3) << std::endl;
+        std::cout << "y_gt: " << io_pose(1,3) << std::endl;
+        std::cout << "z_gt: " << io_pose(2,3) << std::endl;
+        std::cout << "qx_gt: " << q.x() << std::endl;
+        std::cout << "qy_gt: " << q.y() << std::endl;
+        std::cout << "qz_gt: " << q.z() << std::endl;
+        std::cout << "qw_gt: " << q.w() << std::endl;
         std::cout << "\n";
 
         counter++;
