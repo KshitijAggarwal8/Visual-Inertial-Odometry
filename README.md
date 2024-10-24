@@ -5,14 +5,18 @@ Visual Inertial Odometry (VIO) estimates a device's position and orientation by 
 
 ## Phase 0
 Phase 0 involves the proposal for the project, along with information about the methodology that would be used for software development in the project. </br>
-All documents pertaining to the project can be found under `/doc`. </br>
-Initial Product Backlog link: https://tinyurl.com/bdfh7sdd </br>
-A short video providing a brief overview of the project is provided here: https://www.youtube.com/watch?v=4DxbtCh8VpY
+<!-- All documents pertaining to the project can be found under `/doc`. </br> -->
+Initial Product Backlog link: [Tracking sheet](https://tinyurl.com/bdfh7sdd) </br>
+A short video providing a brief overview of the project is provided here: [YouTube](https://www.youtube.com/watch?v=4DxbtCh8VpY)
+
+Project proposal, Activity Diagram, and Quadchart are available in /prod_design.
 
 ## Phase 1
 Phase 1 involves design and implementation. Minor design improvements, inplementation of IMU, and testing of the pipeline is acheived for Phase 1. The results of the generated trajectory can be simulated via the demo(see below).
 
 Product Dev notes: [Link to the Doc](https://docs.google.com/document/d/1cVjzil5ohEbe0I8bfL9t0BLCOK_g_wfpm6qkm9jk-AY/edit?tab=t.0)
+
+![Phase 1 output](Results/phase1_output.jpeg)
 
 
 ## Build Instructions
