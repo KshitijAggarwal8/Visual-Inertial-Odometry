@@ -1,9 +1,0 @@
-<map id="io::InertialOdometry" name="io::InertialOdometry">
-<area shape="rect" id="node1" title="Inertial Odometry class." alt="" coords="125,455,300,605"/>
-<area shape="rect" id="node2" title=" " alt="" coords="87,285,216,377"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,145,76,223"/>
-<area shape="rect" id="node4" title=" " alt="" coords="111,145,227,223"/>
-<area shape="rect" id="node5" title=" " alt="" coords="149,5,188,83"/>
-<area shape="rect" id="node6" title=" " alt="" coords="253,293,327,370"/>
-<area shape="rect" id="node7" title=" " alt="" coords="367,293,437,370"/>
-</map>
