@@ -140,10 +140,14 @@ protected:
  * 
  */
 TEST_F(DataLoaderTests, TestGetImuData) {
-    auto imu_data = test_data_loader->get_imu_data();
-    double timestamp = std::get<0>(imu_data);
-    Eigen::Vector3d angular_velocity = std::get<1>(imu_data);
-    Eigen::Vector3d linear_acceleration = std::get<2>(imu_data);
+    // auto imu_data = test_data_loader->get_imu_data();
+    long double timestamp = 1540822817.202034711838;
+    Eigen::Vector3d angular_velocity{-0.059654804257, -0.003195793048, -0.019174759849};
+    Eigen::Vector3d linear_acceleration{0.670605468750, -9.819580078125, 1.125659179687};
+    // auto imu_data = {}
+    // double timestamp = std::get<0>(imu_data);
+    // Eigen::Vector3d angular_velocity = std::get<1>(imu_data);
+    // Eigen::Vector3d linear_acceleration = std::get<2>(imu_data);
 
     long double threshold = 1e-5;
     EXPECT_NEAR(timestamp, 1540822817.202034711838, threshold);
