@@ -119,4 +119,13 @@ In the current implementation, you may encounter the following warning from `cla
 ```bash
 'eulerAngles' is deprecatedclang(-Wdeprecated-declarations)
 ```
+While building, the warning would look something like this:
+```bash
+In file included from /usr/local/include/eigen3/Eigen/Geometry:39,
+                 from /usr/local/include/eigen3/Eigen/Dense:6,
+                 from /home/dir/VIO/libs/DataLoader/./data_loader.hpp:19,
+                 from /home/dir/VIO/app/main.cpp:12:
+/usr/local/include/eigen3/Eigen/src/Geometry/EulerAngles.h:137:1: note: declared here
+  137 | MatrixBase<Derived>::eulerAngles(Index a0, Index a1, Index a2) const {
+```
 This warning can be safely ignored for the purpose of this project. Future versions will include an updated implementation for Euler angle conversions.
