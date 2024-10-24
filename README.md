@@ -9,6 +9,8 @@ Phase 0 involves the proposal for the project, along with information about the 
 Initial Product Backlog link: [Tracking sheet](https://tinyurl.com/bdfh7sdd) </br>
 A short video providing a brief overview of the project is provided here: [YouTube](https://www.youtube.com/watch?v=4DxbtCh8VpY)
 
+Project proposal, Activity Diagram, and Quadchart are available in /prod_design.
+
 ## Phase 1
 Phase 1 involves design and implementation. Minor design improvements, inplementation of IMU, and testing of the pipeline is acheived for Phase 1. The results of the generated trajectory can be simulated via the demo(see below).
 
