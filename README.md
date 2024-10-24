@@ -14,7 +14,7 @@ Phase 1 involves design and implementation. Minor design improvements, inplement
 
 Product Dev notes: [Link to the Doc](https://docs.google.com/document/d/1cVjzil5ohEbe0I8bfL9t0BLCOK_g_wfpm6qkm9jk-AY/edit?tab=t.0)
 
-![Phase 1 output](images/phase1_output.jpeg)
+![Phase 1 output](Results/phase1_output.jpeg)
 
 
 ## Build Instructions
