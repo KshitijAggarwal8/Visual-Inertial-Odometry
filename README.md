@@ -1,8 +1,4 @@
-![CICD Workflow status](https://github.com/KshitijAggarwal8/Visual-Inertial-Odometry/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg)
-
-[![codecov](https://codecov.io/gh/KshitijAggarwal8/Visual-Inertial-Odometry/branch/main/graph/badge.svg)](https://codecov.io/gh/KshitijAggarwal8/Visual-Inertial-Odometry)
-
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![CICD Workflow status](https://github.com/KshitijAggarwal8/Visual-Inertial-Odometry/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/KshitijAggarwal8/Visual-Inertial-Odometry/branch/main/graph/badge.svg)](https://codecov.io/gh/KshitijAggarwal8/Visual-Inertial-Odometry) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 # Visual Inertial Odometry
 Visual Inertial Odometry (VIO) estimates a device's position and orientation by fusing data from a camera and an Inertial Measurement Unit (IMU). The IMU provides acceleration and angular velocity, while the camera captures visual features for movement tracking. This combination enhances motion tracking accuracy, addressing sensor limitations like IMU drift and visual ambiguity in low light. We fuse the processed measurements using the **Levenberg-Marquardt optimization algorithm**, minimizing residuals between VO-derived and IMU-integrated positions. This approach corrects IMU drift with reliable visual information and mitigates visual errors from lighting or motion blur, resulting in robust position and orientation estimates in challenging conditions.
@@ -14,7 +10,10 @@ Initial Product Backlog link: https://tinyurl.com/bdfh7sdd </br>
 A short video providing a brief overview of the project is provided here: https://www.youtube.com/watch?v=4DxbtCh8VpY
 
 ## Phase 1
-Phase 1 involves design and implementation 
+Phase 1 involves design and implementation. Minor design improvements, inplementation of IMU, and testing of the pipeline is acheived for Phase 1. The results of the generated trajectory can be simulated via the demo(see below).
+
+Product Dev notes: [Link to the Doc](https://docs.google.com/document/d/1cVjzil5ohEbe0I8bfL9t0BLCOK_g_wfpm6qkm9jk-AY/edit?tab=t.0)
+
 
 ## Build Instructions
 
