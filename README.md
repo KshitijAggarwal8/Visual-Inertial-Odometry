@@ -16,9 +16,11 @@ Phase 1 involves design and implementation. Minor design improvements, inplement
 
 Product Dev notes: [Link to the Doc](https://docs.google.com/document/d/1cVjzil5ohEbe0I8bfL9t0BLCOK_g_wfpm6qkm9jk-AY/edit?tab=t.0)
 
+Phase 1 video update [YouTube](https://www.youtube.com/watch?v=6oLZZU_Cp_c)
+
 ![Phase 1 output](Results/phase1_output.jpeg)
 
-[Phase 1 video update](https://www.youtube.com/watch?v=6oLZZU_Cp_c)
+
 
 
 ## Build Instructions
