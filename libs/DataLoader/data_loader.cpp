@@ -10,8 +10,6 @@
  */
 
 #include "data_loader.hpp"
-#include <eigen3/Eigen/src/Core/Matrix.h>
-#include <string>
 
 /**
  * @brief Construct a new dl::Data Loader::Data Loader object

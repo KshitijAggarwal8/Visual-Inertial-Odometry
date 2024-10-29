@@ -17,6 +17,7 @@
 #include <string>
 #include <vector>
 #include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/src/Core/Matrix.h>
 
 /**
  * @brief Namespace for DataLoader class
