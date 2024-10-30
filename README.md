@@ -20,7 +20,7 @@ Phase 1 video update [YouTube](https://www.youtube.com/watch?v=6oLZZU_Cp_c)
 
 ![Phase 1 output](Results/phase1_output.jpeg)
 
-[Phase 1 video update](https://youtu.be/6oLZZU_Cp_c)
+
 
 
 
