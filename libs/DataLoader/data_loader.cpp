@@ -17,6 +17,19 @@
  * @param dataset_location 
  */
 dl::DataLoader::DataLoader(const std::string& dataset_location) {
+
+    // Save the dataset path
+    dataset_path = dataset_location;
+
+    // Initialize the image index
+    current_image_index = 0;
+
+    // Initialize the flag to track if we've found our first valid image
+    first_image_found = false;
+
+    // Initialize the first valid timestamp
+    first_valid_timestamp = 0.0;
+
     // Open the IMU file
     std::string imu_file_path = dataset_location + "/imu.txt";
     imu_file.open(imu_file_path);
@@ -36,6 +49,15 @@ dl::DataLoader::DataLoader(const std::string& dataset_location) {
     // Skip the header line
     std::getline(gt_file, header);
 
+    // Add this in your constructor along with the other file openings:
+    std::string image_file_path = dataset_location + "/images.txt";
+    image_file.open(image_file_path);
+    if (!image_file.is_open()) {
+        std::cerr << "Error opening file: " << image_file_path << std::endl;
+    }
+    // Skip the header line if needed
+    std::getline(image_file, header);
+
     // Parse the ground truth data
     parse_gt_data();
 }
@@ -50,6 +72,9 @@ dl::DataLoader::~DataLoader() {
 
     if (gt_file.is_open()) 
         gt_file.close();
+
+    if (image_file.is_open())
+        image_file.close();
 }
 
 /**
@@ -158,5 +183,36 @@ void dl::DataLoader::parse_gt_data() {
     }
 
     gt_file.close();
+
+
+
+}
+
+
+/**
+ * @brief Function to get the image data from the dataset
+ * 
+ */
+ std::tuple<double, cv::Mat, std::string> dl::DataLoader::get_image_data() {
+    std::string line;
+    if (std::getline(image_file, line)) {
+        std::istringstream iss(line);
+        int id;
+        double timestamp;
+        std::string image_path;
+
+        // If parsing fails, return an empty image
+        if (!(iss >> id >> timestamp >> image_path)) {
+            return std::make_tuple(-1.0, cv::Mat(), image_path);
+        }
+
+        // If this is the first valid image, store the timestamp
+        std::string full_image_path = dataset_path + "/" + image_path;
+        cv::Mat image = cv::imread(full_image_path, cv::IMREAD_COLOR);
+        return std::make_tuple(timestamp, image, image_path);
+    }
+   
+   // No more images to read
+   return std::make_tuple(-1.0, cv::Mat(), "none");  
 }
 

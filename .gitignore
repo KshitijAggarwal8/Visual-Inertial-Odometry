@@ -9,7 +9,7 @@ indoor_forward_9_davis_with_gt/indoor_forward_calib_davis/
 indoor_forward_9_davis_with_gt/compare_output.py
 indoor_forward_9_davis_with_gt/plot_gt.py
 indoor_forward_9_davis_with_gt/plot_imu.py
-indoor_forward_9_davis_with_gt/compare_output.py
+indoor_forward_9_davis_with_gt/compare_output_io.py
 indoor_forward_9_davis_with_gt/events.txt
 indoor_forward_9_davis_with_gt/test.py
 indoor_forward_9_davis_with_gt/plot_vo.py
