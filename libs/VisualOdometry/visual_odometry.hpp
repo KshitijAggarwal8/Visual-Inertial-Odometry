@@ -11,9 +11,14 @@
 
 #pragma once
 
-#include <iostream>
-#include <eigen3/Eigen/Dense>
+#include "opencv2/core/mat.hpp"
+#include "opencv2/features2d.hpp"
 #include <opencv2/opencv.hpp>
+#include <opencv2/core.hpp>
+#include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/Core> 
+#include <eigen3/Eigen/src/Core/Matrix.h>
+#include <iostream>
 #include <vector>
 
 
@@ -26,94 +31,105 @@ namespace vo {
 class VisualOdometry {
 
     private: 
-    /**
-     * @brief Camera intrinsics matrix
-     * 
-     */
-    Eigen::Matrix3f camera_intrinsics;
-    
-    /**
-     * @brief Previous frame
-     * 
-     */
-    cv::Mat prev_frame;
-    
-    /**
-     * @brief Current frame
-     * 
-     */
-    cv::Mat curr_frame;
-    
-    /**
-     * @brief Keypoints in the frame
-     * 
-     */
-    std::vector<cv::KeyPoint> keypoints;
-
-    /**
-     * @brief Matches between the previous and current frame
-     * 
-     */
-    std::vector<cv::DMatch> matches;
-
-    public:
+        
+        /**
+        * @brief Current image keypoints
+        * 
+        */
+        std::vector<cv::KeyPoint> kp_curr;
 
         /**
-         * @brief Visual Odometry final pose
-         * 
-         */
-        Eigen::Matrix4f vo_pose;
+        * @brief Current image descriptors
+        * 
+        */
+        cv::Mat des_curr;
+
+        /**
+        * @brief Previous image keypoints
+        * 
+        */
+        std::vector<cv::KeyPoint> kp_prev;
+
+        /**
+        * @brief Previous image descriptors
+        * 
+        */
+        cv::Mat des_prev;
+
+        /**
+        * @brief Create ORB detector
+        * 
+        */
+        cv::Ptr<cv::ORB> orb_descriptor = cv::ORB::create();
+
+        /**
+        * @brief Create FLANN matcher
+        * 
+        */
+        cv::FlannBasedMatcher flann_matcher;
+
+        /**
+        * @brief Camera intrinsics matrix
+        * 
+        */
+        cv::Mat camera_intrinsics;
+
+        /**
+        * @brief Camera distortion coefficients
+        * 
+        */
+        cv::Mat distortion_coefficients;
+
+        /**
+        * @brief Image width
+        * 
+        */
+        int image_width;
+
+        /**
+        * @brief Image height
+        * 
+        */
+        int image_height;
+
+        /**
+        * @brief Camera matrix
+        * 
+        */
+        cv::Mat new_camera_matrix;
+
+        /**
+        * @brief Initial pose
+        * 
+        */
+        Eigen::Matrix4d vo_pose;
+        
+    public:
 
         /**
          * @brief Construct a new Visual Odometry object
          * 
-         * @param camera_intrinsics 
          */
-        VisualOdometry(Eigen::Matrix3f camera_intrinsics);
+        VisualOdometry(Eigen::Matrix4d initial_pose);
 
         /**
          * @brief Destroy the Visual Odometry object
          * 
          */
-
         ~VisualOdometry();
 
         /**
-         * @brief Compute keypoints in the frame
+         * @brief Function to update the pose using visual odometry 
          * 
-         * @param frame 
-         * @return std::vector<cv::KeyPoint> 
          */
-        std::vector<cv::KeyPoint> compute_keypoints(cv::Mat frame);
+        void update_pose(cv::Mat image);
 
         /**
-         * @brief Match keypoints between the previous and current frame
+         * @brief Function to return the current pose
          * 
-         * @param prev_keypoints 
-         * @param curr_keypoints 
-         * @return std::vector<cv::DMatch> 
          */
-        std::vector<cv::DMatch> compute_matches(std::vector<cv::KeyPoint> prev_keypoints, std::vector<cv::KeyPoint> curr_keypoints);
-
-        /**
-         * @brief Estimate the pose of the camera
-         * 
-         * @param matches 
-         * @param camera_intrinsics 
-         * @return Eigen::Matrix4f 
-         */
-        Eigen::Matrix4f estimate_pose(std::vector<cv::DMatch> matches,
-                                      Eigen::Matrix3f camera_intrinsics);
-        /**
-         * @brief Track the motion of the camera
-         * 
-         * @param prev_frame 
-         * @param curr_frame 
-         * @return Eigen::Matrix4f 
-         */
-        Eigen::Matrix4f track_motion(cv::Mat prev_frame, cv::Mat curr_frame);
+        Eigen::Matrix4d get_pose();
 
 };
-
 
 }

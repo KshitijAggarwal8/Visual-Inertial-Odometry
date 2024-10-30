@@ -5,5 +5,8 @@ add_library(DataLoader
 
 target_include_directories(DataLoader PUBLIC
   # list of directories:
+
   .
   )
+
+target_link_libraries(DataLoader ${OpenCV_LIBS})  # Link OpenCV libraries

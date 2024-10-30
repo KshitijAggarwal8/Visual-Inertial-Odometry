@@ -17,6 +17,9 @@
 #include <string>
 #include <vector>
 #include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/src/Core/Matrix.h>
+#include <opencv2/opencv.hpp>
+#include <opencv2/core/mat.hpp>
 
 /**
  * @brief Namespace for DataLoader class
@@ -44,6 +47,36 @@ private:
      */
     std::ifstream gt_file;
 
+    /**
+     * @brief File stream object for image data
+     * 
+     */
+    std::ifstream image_file;
+
+    /**
+     * @brief String to store the dataset location
+     * 
+     */
+    std::string dataset_path;
+
+    /**
+     * @brief Track which image is being read
+     * 
+     */
+     size_t current_image_index;
+
+     /**
+      * @brief Flag to track if we've found our first valid image
+      * 
+      */
+    bool first_image_found;
+
+    /**
+     * @brief Store first valid timestamp
+     * 
+     */
+    double first_valid_timestamp;
+
 public:
 
     /**
@@ -70,7 +103,6 @@ public:
      */
     double finish_gt_time;
 
-
     /**
      * @brief Construct a new DataLoader object
      * 
@@ -85,7 +117,7 @@ public:
     ~DataLoader();
 
     /**
-     * @brief Get the IMU data from the dataset
+     * @brief Function to get the IMU data from the dataset
      * 
      * @return std::tuple<double, Eigen::Vector3d, Eigen::Vector3d> Tuple containing timestamp, angular velocity and linear acceleration
      */
@@ -96,6 +128,12 @@ public:
      * 
      */
     void parse_gt_data();
+
+    /**
+     * @brief Function to get the image data from the dataset
+     * 
+     */
+     std::tuple<double, cv::Mat, std::string> get_image_data();
 };
 
 };
