@@ -25,7 +25,7 @@ For Phase 2, Visual Odometry has been implemented. However, the output is noisy 
 
 Product Dev notes: [Link to the Doc](https://docs.google.com/document/d/1cVjzil5ohEbe0I8bfL9t0BLCOK_g_wfpm6qkm9jk-AY/edit?tab=t.0)
 
-Phase 1 video update [YouTube](https://youtu.be/KD3rlKqx9cA)
+Phase 2 video update [YouTube](https://youtu.be/KD3rlKqx9cA)
 
 ![Phase 2 output](Results/phase2_output.jpeg)
 
