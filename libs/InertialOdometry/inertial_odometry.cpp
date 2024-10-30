@@ -4,12 +4,13 @@
  * @brief C++ source file for Inertial Odometry class
  * @version 0.1
  * @date 2024-10-16
- * 
+ *
  * @copyright Copyright (c) 2024
- * 
+ *
  */
 
 #include "inertial_odometry.hpp"
+
 #include <eigen3/Eigen/src/Core/Matrix.h>
 #include <iostream>
 
