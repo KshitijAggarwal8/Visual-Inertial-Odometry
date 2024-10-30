@@ -5,7 +5,7 @@ Visual Inertial Odometry (VIO) estimates a device's position and orientation by 
 
 ## Phase 0
 Phase 0 involves the proposal for the project, along with information about the methodology that would be used for software development in the project. </br>
-<!-- All documents pertaining to the project can be found under `/doc`. </br> -->
+All documents pertaining to the project can be found under `/doc`. </br>
 Initial Product Backlog link: [Tracking sheet](https://tinyurl.com/bdfh7sdd) </br>
 A short video providing a brief overview of the project is provided here: [YouTube](https://www.youtube.com/watch?v=4DxbtCh8VpY)
 
@@ -84,13 +84,18 @@ open build/test_coverage/index.html
 ```
 
 ## Running the Program Executables
-To run the executables of the project, the following command must be executed:
+
+### 1. Inertial Odometry
+To run the Inertial Odometry program, execute the following command in your terminal:
+
 ```bash
-./build/app/app
+./build/app/app_io
 ```
 
-The ouput of the above command would be similar to:
-```bash
+#### Output Format
+The program will produce output in the following format:
+
+```
 x_gt: 0.000000
 y_gt: 0.000000
 z_gt: 0.000000
@@ -110,10 +115,40 @@ qw_gt: 1.000000
 ...
 ```
 
+### 2. Visual Odometry
+To run the Visual Odometry program, execute the following command in your terminal:
+
+```bash
+./build/app/app_vo
+```
+
+#### Output Format
+The program will produce output in the following format:
+
+```
+x: 0.000000
+y: 0.000000
+z: 0.000000
+roll: -0.000000
+pitch: 0.000000
+yaw: -0.000000
+
+x: 0.577350
+y: -0.577350
+z: 0.577350
+roll: 180.000000
+pitch: -180.000000
+yaw: -180.000000
+
+...
+```
+
 To write this to a text file for better processing, run the executable in this manner:
 ```bash
-./build/app/app > output.txt
+./build/app/app_x > output.txt
 ```
+
+Where `x` can be `io` or `vo` 
 
 ## Collaborators
 Apoorv Thapliyal - 190907268 </br>

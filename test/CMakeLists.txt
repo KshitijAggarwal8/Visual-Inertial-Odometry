@@ -21,6 +21,7 @@ target_link_libraries(cpp-test PUBLIC
   DataLoader
   InertialOdometry
   VisualOdometry
+  ${OpenCV_LIBS}
   )
 
 # Enable CMake’s test runner to discover the tests included in the
