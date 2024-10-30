@@ -77,8 +77,6 @@ int main()
         std::cout << "yaw: " << vo_euler_angles(2) << std::endl;
         std::cout << "\n";
 
-        // break;
-
         counter++;
     }    
 
