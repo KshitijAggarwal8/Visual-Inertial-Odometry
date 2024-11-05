@@ -81,6 +81,13 @@ dl::DataLoader::~DataLoader() {
  */
 std::tuple<long double, Eigen::Vector3d, Eigen::Vector3d>
 dl::DataLoader::get_imu_data() {
+
+  // Check if the file was successfully opened
+  if (!imu_file.is_open()) {
+    std::cerr << "IMU file not open. Returning default error tuple.\n";
+    return {-1.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero()};
+  }
+
   if (imu_file.eof())
     return {-1.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero()};
 

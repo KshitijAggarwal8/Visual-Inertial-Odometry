@@ -138,6 +138,15 @@ class DataLoaderTests : public ::testing::Test {
  * @brief Construct a test for get_imu_data function
  *
  */
+
+ TEST_F(DataLoaderTests, TestGetImuDataEmptyFile) {
+  std::ofstream empty_imu("../../indoor_forward_9_davis_with_gt/imu.txt", std::ios::trunc);
+  empty_imu.close();
+  
+  auto imu_data = test_data_loader->get_imu_data();
+  EXPECT_EQ(std::get<0>(imu_data), -1.0);
+}
+
 TEST_F(DataLoaderTests, TestGetImuData) {
   auto imu_data = test_data_loader->get_imu_data();
   // long double timestamp = 1540822817.202034711838;
